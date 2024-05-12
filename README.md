@@ -1,2 +1,9 @@
-# Dotnet-wasm-blog
+# .NET in Javascript
 Code for the content for blog post on .NET WASM and Javascript implementation
+
+
+### Follow me
+
+<a href="https://www.linkedin.com/in/nilaybarot/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?&style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+
+<a href="https://nullbyte.hashnode.dev/" target="_blank"><img src="https://img.shields.io/badge/Hashnode-2962FF?style=for-the-badge&logo=hashnode&logoColor=white" alt="Hashnode"></a>

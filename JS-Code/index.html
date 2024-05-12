@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .form-container {
+        display: flex;
+      }
+      .btn {
+        display: inline-block;
+        padding: 2%;
+        width: 100%;
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Employee Information</h2>
+    <table>
+      <tbody>
+        <tr>
+          <td>Employee Id</td>
+          <td><input id="txtEmployeeId" type="number" /></td>
+        </tr>
+        <tr>
+          <td>Employee Name</td>
+          <td><input id="txtEmployeeName" type="text" /></td>
+        </tr>
+        <tr>
+          <td>Employee Age</td>
+          <td><input id="txtEmployeeAge" type="number" /></td>
+        </tr>
+        <tr>
+          <td>Is Active</td>
+          <td><input id="chkIsActive" type="checkbox" /></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <button class="btn" onclick="btnSetEmployee_Click()">
+              Set Employee
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <button class="btn" onclick="btnGetEmployee_Click()">
+              Get Employee
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+      const btnSetEmployee_Click = async () => {
+        let employeeId = Number(document.getElementById("txtEmployeeId").value);
+        let employeeName = document.getElementById("txtEmployeeName").value;
+        let employeeAge = Number(
+          document.getElementById("txtEmployeeAge").value
+        );
+        let isActive = document.getElementById("chkIsActive").checked;
+
+        if (employeeId && employeeName && employeeAge && isActive) {
+          import("/dotnet/main.js").then(({ setEmployee }) => {
+            setEmployee(employeeId, employeeName, employeeAge, isActive).then(()=>{
+              alert('Success');
+            })
+          });
+        } else {
+          alert("Invalid data entered");
+        }
+      };
+
+      const btnGetEmployee_Click = async () => {
+        import("/dotnet/main.js").then(({ getEmployee }) => {
+          getEmployee().then((result)=>{
+            if(result===null){
+              alert('no data present');
+              return;
+            }
+            alert(result);
+          });
+        });
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+
+.vs/
+CSharp- Code/JSBridge.csproj.user
+CSharp- Code/Properties/PublishProfiles/FolderProfile.pubxml.user
+JS-Code/node_modules/.package-lock.json
